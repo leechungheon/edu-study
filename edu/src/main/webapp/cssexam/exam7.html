@@ -1,41 +1,49 @@
-<!DOCTYPE html>
-<html>
+﻿<!doctype html>
+<html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+<meta charset="utf-8">
+<title>CSS 학습</title>
+<style>
+	div {
+		width : 100%;
+		height : 100px;
+		margin-bottom : 20px;
+	}
+	div#jbGrad01 {
+		background-image : linear-gradient(to bottom, yellow, green)
+	}
+	div#jbGrad02 {
+		background-image : linear-gradient(to top, yellow, white, green)
+	}
+	div#jbGrad03 {
+		background-image : linear-gradient(to right, yellow, white, green)
+	}
+	div#jbGrad04 {
+		background-image : linear-gradient(to left, yellow, white, green)
+	}
+	div#jbGrad05 {
+		background-image : linear-gradient(45deg, yellow, white, green)
+	}
+	div#jbGrad06 {
+		background-image : linear-gradient(to right, red, orange, yellow, green, blue, navy, purple);
+		font-size : 3em;
+		text-align : center;
+		text-shadow : 2px 2px 5px white, -2px -2px 5px white;
+	}
+	div#jbGrad07{
+		background-image : url("../images/pink.gif");
+	}
+</style>
 </head>
 <body>
-<h1>입력폼 학습(1)</h1>
-<hr>
-<form action="나중에학습할서블릿프로그램의URL" method="get">
-이름 <input type="text" name="stname" required><br>
-암호 <input type="password" name="stpwd" required><br>
-나이 <input type="number" name="stage"><br> <!-- HTML5 -->
-좋아하는 칼라 <input type="color" name="stcolor"><br> <!-- HTML5 -->
-좋아하는 음식 <br>
-햄버거 <input type="checkbox"  name="stfood" value="f1">
-비지찌게 <input type="checkbox"  name="stfood" value="f2">
-회덮밥 <input type="checkbox"  name="stfood" value="f3">
-돈까스 <input type="checkbox"  name="stfood" value="f4"><br>
-성별 <br>
-남성 <input type="radio"  name="gender" value="male">
-여성 <input type="radio"  name="gender" value="female"><br>
-<input type="submit" value="전송하기">
-<input type="reset" value="초기상태로">
-</form>
+	<h1>백그라운드 그라디언트</h1>
+	<hr>
+  	<div id="jbGrad01">to bottom</div>
+  	<div id="jbGrad02">to top</div>
+  	<div id="jbGrad03">to right</div>
+  	<div id="jbGrad04">to left</div>
+  	<div id="jbGrad05">45deg</div>
+  	<div id="jbGrad06">ㅋㅋㅋㅋㅋㅋ</div>
+  	<div id="jbGrad07">ㅋㅋㅋㅋㅋㅋ</div>
 </body>
 </html>
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
