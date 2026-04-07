@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	@font-face {
+	    font-family: 'JejuStoneWall';
+	    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-EF@1.0/EF_jejudoldam.woff2') format('woff2');
+	    font-weight: normal;
+	    font-display: swap;
+	}
+	div{
+		font-family: 'JejuStoneWall';
+		margin-left: auto; margin-right: auto;
+	}
+	input{
+		font-family: 'JejuStoneWall';
+		margin: 10px 0px;
+	}
+	h1{
+		text-shadow: 2px 2px 6px green;
+		text-align: center;
+	}
+	#div1{
+		background-image : linear-gradient(to bottom, lightgreen, green);
+		border-radius: 10px;
+		margin: 0px 100px;
+		padding: 30px;
+	}
+</style>
+</head>
+<body>
+<form method="post" action="...">
+<div>
+<h1>펜션 예약 서비스</h1>
+<hr>
+<div id="div1">
+예약자명 : <input type="text" name="name" required><br>
+예약암호 : <input type="password" name="password" required><br>
+룸선택 : 
+<input type="radio" name="room" value="m1" required>둘리
+<input type="radio" name="room" value="m2" required>희동
+<input type="radio" name="room" value="m3" required>도우너
+<input type="radio" name="room" value="m4" required>또치
+<br>
+추가요청사항 : 
+<input type="checkbox" name="extra" value="r1" required>바베큐
+<input type="checkbox" name="extra" value="r2" required>수영장 
+<input type="checkbox" name="extra" value="r3" required>낚시 
+<input type="checkbox" name="extra" value="r4" required>조식 
+<br>
+예약날짜 : <input type="date"  name="a"/>
+<hr>
+<input type="submit" value="보내기">
+<input type="submit" value="다시작성하기">
+</div>
+</div>
+</form>
+</body>
+</html>
