@@ -17,10 +17,11 @@
 <hr>
 <h2 id="if">[ if 문의 처리 결과]</h2>
 <script>
-	var day = new Date().getDay();
+	var day = new Date();
+	document.write(day);
 	if ( day == 4 || day == 5 ) {
   		document.write("<h3>곧 주말이 됩니다ㅎㅎ</h3>");
-	} else if ( day == 0 || day == 6 ) { 
+	} else if ( day == 0 || day == 6 ) {
   		document.write("<h3>주말~~~~</h3>");
 	} else { 
   		document.write("<h3>주말은 아직 멀었습니다ㅠㅠ</h3>");

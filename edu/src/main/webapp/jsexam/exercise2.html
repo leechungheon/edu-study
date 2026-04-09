@@ -14,8 +14,12 @@
 <hr>
 </body>
 <script>
-	var start = parseInt(Math.random()*10)+1;
-	var end= parseInt(Math.random()*10)+11;
-	document.write("<h2>"+start+"부터"+end+"까지의 합은"+(start+end)+"입니다.<h2>");
+	const start = parseInt(Math.random()*10)+1;
+	const end= parseInt(Math.random()*10)+11;
+	let sum = 0;
+	for(let i=start; i<=end; i++){
+		sum+=i;
+	}
+	document.write("<h2>"+start+"부터"+end+"까지의 합은"+sum+"입니다.</h2>");
 </script>
 </html>
