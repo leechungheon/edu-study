@@ -18,7 +18,7 @@ public class FlowServlet extends HttpServlet {
 		System.out.println("init() 메서드 호출.....");
 	}
 	public void destroy() {
-		System.out.println("destroy() 메서드 호출....");
+		System.out.println("destroy() 메서드 호출....!");
 	}
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("service() 메서드 호출....");
