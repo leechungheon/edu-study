@@ -20,10 +20,7 @@ public class CountServlet3 extends HttpServlet {
 		int[] count = (int[])session.getAttribute("cnt");
 		count[0]++;
 		out.print("<h1>세션객체</h1><hr>");	
-		out.print("<h3>당신은 "+ count[0] + "번째 방문입니다.</h3>");		
+		out.print("<h3>당신은 "+ count[0] + "번째 방문입니다.</h3>");
 		out.close();
 	}
 }
-
-
-

@@ -18,10 +18,3 @@ public class ForwardServlet extends HttpServlet {
 		rd.forward(request,  response);
 	}
 }
-
-
-
-
-
-
-

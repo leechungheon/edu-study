@@ -9,18 +9,18 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 @WebServlet("/sessiontest")
-public class SessionTestServlet extends HttpServlet {	
+public class SessionTestServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter();
 		String command = request.getParameter("comm");
-		HttpSession session = request.getSession();		
+		HttpSession session = request.getSession(true);		// false; 추출할 세션 객체가 없으면 null을 반환
 		String msg="";
 		long time = session.getCreationTime();
 		String id = session.getId();
 	    if(command != null && command.equals("view")) {
-			if(session.isNew()) {
+			if(session.isNew()) { // 기존에 존재했던 세션 객체인지
 				msg = "세션 객체 생성 : "; 
 			} else {
 				msg = "세션 객체 추출 : "; 
@@ -28,7 +28,7 @@ public class SessionTestServlet extends HttpServlet {
 			msg += "<br>id : " + id + " <br>time : " +
 			                new Date(time);
 		} else if (command != null && command.equals("delete")) {
-			session.invalidate();
+			session.invalidate(); // 세션 객체 삭제
 			msg = id + "을 id로 갖는 세션 객체 삭제!!";
 		} else {
 			msg = "요청시 Query 문자열로 comm=view 또는 comm=delete 를 "
