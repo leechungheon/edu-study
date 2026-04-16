@@ -11,10 +11,10 @@
 <hr>
 pageScope 객체에서 추출 : ${ pageScope.msg }<br>
 requestScope 객체에서 추출 : ${ requestScope.msg }<br>
-sessionScope 객체에서 추출 : ${ sessionScope.msg }<br>
-applicationScope 객체에서 추출 : ${ applicationScope.msg }<br>
+sessionScope 객체에서 추출 : ${ sessionScope.msg }<br><!-- HttpSession 객체에 저장된 객체 -->
+applicationScope 객체에서 추출 : ${ applicationScope.msg }<br><!-- ServletContext 객체에 저장된 객체 -->
 <hr>
-msg 추출 : ${msg}<br>
+msg 추출 : ${msg}<br><!-- HttpSession 객체에 저장된 객체 -->
 </body>
 </html>
 

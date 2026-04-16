@@ -23,4 +23,3 @@ pageScope.number 변수의 값 : ${pageScope.number}<br>
 number 변수의 값에 23을 더한 값 : ${ number + 23 }
 </body>
 </html>
-

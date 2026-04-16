@@ -42,7 +42,7 @@ if (request.getMethod().equals("POST")) {
 	if (name != null ) {
 %>
 		 <h3><%=  name %> 회원님.. 좋은하루 되세요...</h3>
-	 	 <a href="/sedu/jspexam/exam16.jsp">로그아웃</a>	
+	 	 <a href="/edu/jspexam/exam16.jsp">로그아웃</a>	
 <%
    	} else {
 %>
