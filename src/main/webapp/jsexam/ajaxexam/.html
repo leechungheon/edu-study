@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>오늘의 날씨 정보</title>
+<style>
+@font-face {
+    font-family: 'Ownglyph_noocar-Rg';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-2@1.0/Ownglyph_noocar-Rg.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {	
+	font-family: 'Ownglyph_noocar-Rg';
+	line-height: 2;
+	font-size: 1.1em;
+	margin-left: 10px;
+}
+	
+h1 {
+	font-size: 52px;
+	letter-spacing: 2px;
+	text-shadow: 3px 3px 8px gray;
+}
+
+img {
+	width: 300px;
+	margin-top: 30px;
+}
+</style>
+</head>
+<body>
+	<h1>오늘의 날씨 정보</h1>
+	<hr>
+	<div id='weather'></div>
+</body>
+<script>
+	window.onload = ()=> {
+		const xhr = new XMLHttpRequest();
+		xhr.onload = () => {
+			if (xhr.status == 200) {
+			  const obj = JSON.parse(xhr.responseText);
+			  const target = document.querySelector('#weather');
+			  target.innerHTML = `<span>기온 : ${obj.temp} 도</span><br>`
+			  						  + "<img src='/edu/" +obj.img + "'>";
+			}
+		}
+		xhr.open('GET', 'content/weather.jsp', true);
+		xhr.send();
+	}
+</script>
+</html>

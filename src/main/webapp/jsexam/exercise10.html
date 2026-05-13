@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script src="util.js"></script>
+<script>
+function printObject(p){
+	if(typeof p != 'object')return;
+	writeColor(p.msg, p.tag, p.color);
+};
+function Obj(msg, tag, color){
+	this.msg = msg;
+	this.tag = tag;
+	this.color = color;
+};
+var obj1 = new Obj("안녕하세요", "h1", "red");
+var obj2 = new Obj("제 이름은", "h2", "orange");
+var obj3 = new Obj("이충헌입니다.", "h3", "yellow");
+var obj4 = new Obj("생일은", "h4", "green");
+var obj5 = new Obj("2001년 1월 29일입니다.", "h5", "blue");
+printObject(obj1);
+printObject(obj2);
+printObject(obj3);
+printObject(obj4);
+printObject(obj5);
+</script>
+</body>
+</html>
