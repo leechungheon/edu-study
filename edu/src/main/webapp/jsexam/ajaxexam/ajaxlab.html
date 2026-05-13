@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+	window.addEventListener("load", function(){
+		const xhr = new XMLHttpRequest();
+		    xhr.onload = function(event) {
+			   if (xhr.status == 200) {
+				  const str = xhr.responseText;
+				  const obj = JSON.parse(str);
+				  const target = document.getElementById('temp');
+				  target.textContent += obj.temp+"도";
+			   }
+		    };
+		    xhr.open('GET', 'content/weather.jsp', true);
+		    xhr.send(); 
+	});
+	function changeColor(){
+		const xhr = new XMLHttpRequest();	
+		xhr.onload = function(e) {
+	  		if (this.status == 200) {
+	    		const title = document.querySelector("#weatherTitle");
+	    		title.style.color=='red'?title.style.color='black':title.style.color='red';
+	  		}
+		};
+		xhr.open("GET", "/edu/jsexam/ajaxexam/ajaxlab.html");
+		xhr.send();
+	}
+	
+	setInterval(changeColor,2000);
+</script>
+<h1 id="weatherTitle" style="text-shadow: 3px 3px 5px black;">오늘의 날씨 정보</h1><hr>
+<p id="temp">기온 : </p>
+<img src="/edu/images/sun.png">
+</body>
+</html>
