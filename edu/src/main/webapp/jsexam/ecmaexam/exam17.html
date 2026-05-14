@@ -46,11 +46,11 @@
 
 		console.log("CASE1");
 		let {name, price} = coffee;
-		console.log(name);		
+		console.log(name);	
 		console.log(price);
 
 		console.log("CASE2");
-		let {name: coffeeName, price: coffeePrice} = coffee;		
+		let {name: coffeeName, coffeePrice=price} = coffee;		
 		console.log(coffeeName);		
 		console.log(coffeePrice);
 

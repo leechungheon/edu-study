@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>어디출력될까?</title>
+</head>
+<body>
+<h1>자주 사용되는 HTML 태그들</h1>
+<hr> <!-- 수평선 -->
+<h2>하이퍼링크 설정</h2>
+<a href="http://www.w3schools.com/tags/default.asp">HTML 학습사이트</a>
+<a href="http://www.naver.com/">네이버</a>
+<h2>이미지 출력</h2>
+<img src="http://localhost:8088/edu/images/olaf.jpg">
+<img src="/edu/images/duke.png"  width="200"/><!-- 종료태그가 없어서 둘 다 사용 가능 -->
+<!-- width만 200픽셀 조정했는데 높이도 비율적으로 같이 조정됨 -->
+<img src="../images/doolys.jpg">
+<!-- a태그와 img태그는 자동으로 행바꿈 x, 인라인태그라고 함 -->
+<h2>순서가 있는 리스트</h2> <!-- ordered list -->
+<ol>
+	<li>HTML</li>
+	<li>CSS</li>
+	<li>JavaScript</li>
+</ol>
+<h2>순서가 없는 리스트</h2> <!-- unordered list -->
+<ul>
+	<li>HTML</li>
+	<li>CSS</li>
+	<li>JavaScript</li>
+</ul>
+<h2>테이블</h2>
+<table border="1"> 
+	<tr><th>언어명</th><th>기능</th></tr>
+	<tr><td>HTML</td><td>웹 페이지의 내용을 작성</td></tr>
+	<tr><td>CSS</td><td>웹 페이지의 스타일</td></tr>
+	<tr><td>JavaScript</td><td>웹 페이지의 상호작용과 동적인 처리</td></tr>
+</table>
+<h2>비디오</h2>
+<video src="../images/trailer.mp4" width="500" height="400" controls></video>
+<iframe width="393" height="699" title="NAVER Clip" src="https://m.naver.com/shorts/?mediaId=71C1EAACE0648DC11E043E18CECAAE499F65&serviceType=CLIP&mediaType=VOD&recType=CLIP_SEARCH&entryPoint=https%3A%2F%2Fsearch.naver.com%2Fsearch.naver%3Fssc%3Dtab.clip.all%26sm%3Dtab_jum%26query%3D%25EC%2588%2598%25EC%259B%2590%25ED%2599%2594%25EC%2584%25B1&docNo=0&clickNsc=tab.clip.all&clickArea=cli_clp&recId=%7B%22query%22%3A%22%EC%88%98%EC%9B%90%ED%99%94%EC%84%B1%22%2C%22seedIndex%22%3A%226%22%2C%22type%22%3A%22ALL%22%2C%22order%22%3A%22RELATED%22%2C%22filter%22%3A%22LOW_QUALITY_LEVEL_3%22%7D&panelType=sch_clptab&adAllowed=N&airsArea=clip&enableReverse=true&allowsMoveToNext=false&openComment=false&includeLowQuality=false&oembed=true" frameborder="0" allow="autoplay; clipboard-write; web-share" allowfullscreen></iframe>
+<h2>이미지에 이름 붙이기</h2>
+<figure>
+<img src="../images/3.jpg" width="100">
+<img src="../images/4.jpg" width="100">
+<img src="../images/5.jpg" width="100">
+<figcaption>큐티아이들</figcaption>
+</figure>
+</body>
+</html>

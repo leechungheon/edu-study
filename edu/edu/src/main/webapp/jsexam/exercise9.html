@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script src="util.js"></script>
+<script>
+	function printH1(content){
+		write(content,"h1");
+	}
+	function printH4(content){
+		write(content,"h4");
+	}
+	function apply(arr, func){
+		if(!Array.isArray(arr) || typeof func != 'function'){
+			console.log("아규먼트 오류");
+			return false;
+		}
+		for(let i of arr){
+			func(i);
+		}
+		return true;
+	}
+	let arr=new Array();
+	while(true){
+		var data = window.prompt("데이터 입력");
+		if(data==null)break;
+		arr.push(data);
+	}
+	const rnd = parseInt(Math.random()*10+1);
+	console.log("추출된 난수 = "+rnd);
+	
+	let result;
+	
+	if(rnd==1 || rnd==4 || rnd==6){
+		result = apply(arr,printH1);
+	}else if(rnd==3 || rnd==5 || rnd==7){
+		result = apply(arr,printH4);
+	}else if(rnd==8 || rnd==9){
+		result = apply("ㅋㅋ",printH1);
+	}else{
+		result = apply(arr);
+	}
+	
+	if(result){
+		window.alert("처리 성공");
+	}else{
+		window.alert("처리 실패");
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트 버블링 실습</title>
+<style>
+	body{
+		text-align: center;
+	}
+	h1{
+		color: white;
+		text-shadow: 4px 4px 5px orange;
+	}
+	section{
+		border: 1px solid red;
+		border-radius: 20px;
+		margin-left: auto;
+		margin-right: auto;
+		width: 40%;
+		height: 150px;
+		line-height: 150px;
+	}
+	button{
+		background-color: black;
+		color: white;
+		height: 30px;
+		padding: 0 20px;
+	}
+</style>
+</head>
+<body>
+    <h1>이벤트 처리 실습</h1><hr>
+    
+    <section>
+        <button data-img="sun">맑음</button>
+        <button data-img="cloud">흐림</button>
+        <button data-img="rain">비</button>
+    </section>
+    
+    <hr>
+    <img src="">
+
+<script>
+	// 1. 이미지를 바꿀 img 태그를 미리 찾아둡니다.
+	const imgDom = document.querySelector("img");
+	
+	// 2. 버튼들을 감싸고 있는 부모 요소인 section을 찾아옵니다.
+	const sectionDom = document.querySelector("section");
+
+	// 3. 이벤트 핸들러 함수
+	function clickB(e) {
+		// 핵심 1: 클릭된 정확한 타겟(e.target)이 '버튼'일 때만 동작하도록 걸러냅니다.
+		if (e.target.tagName === "BUTTON") {
+			// 클릭된 버튼의 data-img 속성을 가져와서 이미지 경로를 변경합니다.
+			imgDom.src = "../../images/" + e.target.getAttribute('data-img') + ".png";
+		}
+	}
+
+	// 핵심 2: section 부모 요소 딱 '하나'에만 이벤트를 달아줍니다.
+	sectionDom.addEventListener("click", clickB);
+</script>
+</body>
+</html>

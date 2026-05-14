@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script src="util.js"></script>
+<script>
+	function getKorDay(y,m,d){
+		const day=["일","월","화","수","목","금","토"];
+		if(typeof y !== 'number' || typeof m !== 'number' || typeof d !== 'number'||isNaN(y)||isNaN(m)||isNaN(d)){
+			return undefined;
+		}else{
+			const date = new Date(y,m,d);
+			return day[date.getDay()];
+		}
+	}
+	let yy = window.prompt("년");
+	let mm = window.prompt("월");
+	let dd = window.prompt("일");
+	let y = Number(yy);
+	let m = Number(mm);
+	let d = Number(dd);
+	if(getKorDay(y,m-1,d)==undefined){
+		document.write("<h1 style='color:red'>결과 없음</h1>");
+	}else {
+        document.write("<h1 style='color:blue'>" + y + "년 " + m + "월 " + d + "일은 " + getKorDay(y,m-1,d) + "요일입니다.</h1>");
+    }
+</script>
+</body>
+</html>
