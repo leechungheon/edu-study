@@ -5,39 +5,29 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>자바스크립트의 객체 생성과 사용(생성자 함수)</h1>
+<h1>Promise 객체 - 나중에 결과를 줄께!!</h1>
 <hr>
-<script src="util.js"></script>
+<h2>async/await 는 비동기 코드를 순서대로 실행되는 것처럼 보이게 해주는 문법적 설탕이다.</h2>
+<h3>work() 를 await 으로 호출하면 Promise 작업이 끝날 때까지 기다리며,
+resolve() 호출시 전달되는 값을 결과로 받게 된다.</h3>
+<h3>await 는 async 로 선언된 함수 안에서만 사용할 수 있다.</h3>
 <script>
-function Student(name, korean, math, english, science) {
-    this.이름 = name;
-    this.국어 = korean;
-    this.수학 = math;
-    this.영어 = english;
-    this.과학 = science;
-}   
-Student.prototype.toString = function() {
-	return this.이름+ " :  " +
-		 this.국어+ ", " +
-		 this.수학+ ", " +
-		 this.영어+ ", " +
-		 this.과학    	
+function work() {
+    return new Promise((resolve, reject) => {
+        console.log("작업 시작");
+        setTimeout(() => {
+            resolve("작업 완료");
+        }, 2000);
+    });
 }
 
-var st1 = new Student('둘리', 96, 98, 92, 98);
-var st2 = new Student('또치', 92, 98, 96, 98);
-var st3 = new Student('도우너', 76, 96, 94, 90);
+async function run() {
+    const result = await work();
+    console.log(result);
+    console.log("다음 작업");
+}
 
-write(st1, "h2");
-write(st2, "h2");
-write(st3, "h2");
-	
-	
+run();
 </script>
 </body>
 </html>
-
-
-
-
-

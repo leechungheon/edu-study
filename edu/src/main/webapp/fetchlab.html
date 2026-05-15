@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Friend REST API를 fetch 기반 AJAX로 요청하기</h1>
+<h2>CORS 반영</h2>
+<hr>
+<button id="f1">모든 친구들</button>
+<button id="f2">x번 친구</button>
+<button id ="f3">친구정보 저장</button>
+<button id="f4">친구정보 삭제</button>
+<p id="content"></p>
+<script>
+
+//[async/await 방식]
+	const postData = async () => {
+		const fname = window.prompt("저장할 친구의 이름을 입력하세요:");
+		const fage = parseInt(window.prompt("저장할 친구의 나이를 입력하세요:"));
+	    const payload = { fname, fage};
+	    try {
+	        const response = await fetch("http://localhost:8089/api/save", {
+	            method: 'POST',
+	            headers: { 'Content-Type': 'application/json' },
+	            body: JSON.stringify(payload)
+	        });
+	        if (!response.ok) throw new Error(response.status);
+	        const data = await response.json();
+	        document.getElementById("content").textContent = "저장 성공!";
+	    } catch (error) {
+	        console.error('실패:', error);
+	    }
+	};
+
+	const removeData = async () => {
+	    try {
+			const friendId = window.prompt("삭제할 친구의 ID를 입력하세요:");
+	        const response = await fetch(`http://localhost:8089/api/remove?id=${friendId}`, {
+	            method: 'DELETE'
+	        });
+	        if (!response.ok) throw new Error(response.status);
+	        document.getElementById("content").textContent = "삭제 성공!";
+	    } catch (error) {
+	        console.error('실패:', error);
+	    }
+	};
+	
+	document.addEventListener('DOMContentLoaded', function () {
+		const allFriend = document.getElementById('f1');
+		const idXFriend = document.getElementById('f2');
+		const saveFriend = document.getElementById('f3');
+		const removeFriend = document.getElementById('f4');
+		
+		// fetch then을 사용한 방식
+		allFriend.addEventListener('click', function(){
+			fetch('http://localhost:8089/api')
+			.then(response => {
+        		if (!response.ok) throw new Error(response.statusText);
+        		return response.json();
+      		})
+      		.then(data => {
+                if (Array.isArray(data)) {
+                	content.innerHTML="";
+                    data.forEach(friend => {
+                        content.innerHTML += `ID: ${friend.id}, 이름: ${friend.fname}, 나이: ${friend.fage}<br>`;
+                    });
+                } else {
+                	content.textContent = "데이터가 없습니다.";
+                }
+            })
+      		.catch(err => console.error(err));
+		})
+		
+		idXFriend.addEventListener('click', function(){
+			const friendId = window.prompt("조회할 친구의 ID를 입력하세요:");
+			fetch(`http://localhost:8089/api/${friendId}`)
+			.then(response => {
+        		if (!response.ok) throw new Error(response.statusText);
+        		return response.json();
+      		})
+      		.then(data=>{
+      			document.getElementById("content").textContent = `${data.fname}:${data.fage}`;
+      		})
+      		.catch(err => console.error(err));
+		})
+		
+		saveFriend.addEventListener("click", postData);
+		removeFriend.addEventListener("click", removeData);
+	});
+</script>
+</body>
+</html>
