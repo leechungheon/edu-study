@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+	const num = Math.floor(Math.random()*3+1);
+	if(window.confirm(num+"으로 이동하시겠습니까?")){
+		if(num==1){
+			window.open("https://www.daum.net/");
+		}else if(num==2){
+			window.open("https://www.naver.com/");
+		}else{
+			window.open("https://www.google.com/webhp?hl=ko&sa=X&ved=0ahUKEwjA5d-uzOmTAxXbh1YBHWjeAO0QPAgJ");
+		}
+	}else{
+		window.open("http://localhost:8088/edu/first.html");
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script src="util.js"></script>
+<script>
+	function DayInfo(n, y, m, d){
+		this.name = n;
+		this.year = y;
+		this.month = m;
+		this.day = d;
+	};
+	DayInfo.prototype.getMonthInfo = function(){
+		return this.name+"님은 "+this.month+"월에 태어났어요.";
+	};
+	DayInfo.prototype.getKorDay = function(){
+		var date = new Date(this.year, this.month-1, this.day);
+		const yoyil = ['일','월','화','수','목','금','토'];
+		return this.name+"님은 "+yoyil[date.getDay()]+"요일에 태어났어요.";
+	};
+	let info1 = new DayInfo("이충헌", 2001,1,29);
+	let info2 = new DayInfo("이민호", 2000,2,8);
+	let info3 = new DayInfo("이현석", 1998,4,21);
+	let info4 = new DayInfo("남지호", 1995,4,22);
+	let info5 = new DayInfo("김민수", 1998,9,19);
+	writeColor(info1.getMonthInfo(), "h3", "#3C5C62");
+	writeColor(info1.getKorDay()+"<hr>", "h3", "#3C5C62");
+	writeColor(info2.getMonthInfo(), "h3", "#3E705A");
+	writeColor(info2.getKorDay()+"<hr>", "h3", "#3E705A");
+	writeColor(info3.getMonthInfo(), "h3", "#418452");
+	writeColor(info3.getKorDay()+"<hr>", "h3", "#418452");
+	writeColor(info4.getMonthInfo(), "h3", "#43984A");
+	writeColor(info4.getKorDay()+"<hr>", "h3", "#43984A");
+	writeColor(info5.getMonthInfo(), "h3", "#45AC42");
+	writeColor(info5.getKorDay()+"<hr>", "h3", "#45AC42");
+</script>
+</body>
+</html>
